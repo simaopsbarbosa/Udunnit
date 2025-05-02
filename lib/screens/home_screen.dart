@@ -303,7 +303,7 @@ class HomeScreen extends StatelessWidget {
                                                 ),
                                               ),
                                               TextSpan(
-                                                text: " 15 tasks completed",
+                                                text: " 6 tasks completed",
                                               ),
                                             ],
                                           ),
@@ -323,7 +323,7 @@ class HomeScreen extends StatelessWidget {
                                                 ),
                                               ),
                                               TextSpan(
-                                                text: " 29 tasks completed",
+                                                text: " 20 tasks completed",
                                               ),
                                             ],
                                           ),
@@ -342,7 +342,7 @@ class HomeScreen extends StatelessWidget {
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                               ),
-                                              TextSpan(text: " 7 tasks left"),
+                                              TextSpan(text: " 5 tasks left"),
                                             ],
                                           ),
                                         ),

@@ -231,7 +231,7 @@ class TasksScreenState extends State<TasksScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 40),
+          const SizedBox(height: 35),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0),
             child: Text(
