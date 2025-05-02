@@ -11,7 +11,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Udunnit',
 
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
 
       home: MainPage(),
       debugShowCheckedModeBanner: false,
@@ -34,22 +36,15 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFECECEC),
-
         foregroundColor: Colors.black,
-
         elevation: 0,
-
         titleSpacing: 20.0,
-
         title: Row(
           children: const [
             Icon(Icons.group, color: Colors.deepOrange),
-
             SizedBox(width: 10),
-
             Text(
               'Udunnit',
-
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
           ],
