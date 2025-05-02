@@ -29,7 +29,7 @@ class TasksScreenState extends State<TasksScreen> {
 
   void _toggleTask(Task task) async {
     setState(() {
-      task.isCompleted = true;
+      task.isCompleted = !task.isCompleted;
     });
 
     await Future.delayed(const Duration(milliseconds: 400));
@@ -151,9 +151,7 @@ class TasksScreenState extends State<TasksScreen> {
           child: ListTile(
             leading: GestureDetector(
               onTap: () {
-                if (!task.isCompleted) {
-                  _toggleTask(task);
-                }
+                _toggleTask(task);
               },
               child: Container(
                 padding: const EdgeInsets.all(6),
@@ -222,6 +220,21 @@ class AnimatedListWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
+        if (activeTasks.isEmpty)
+          Padding(
+            padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+            child: Center(
+              child: Text(
+                "Nothing to do 🏖️\nWell done!",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey[600],
+                ),
+              ),
+            ),
+          ),
         ...activeTasks.map((task) => buildTile(task, false)),
         if (completedTasks.isNotEmpty) ...[
           const Padding(
