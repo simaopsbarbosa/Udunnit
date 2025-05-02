@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udunnit/themes/colors.dart';
+import 'package:Udunnit/themes/colors.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
