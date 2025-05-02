@@ -27,13 +27,10 @@ class TasksScreenState extends State<TasksScreen> {
 
   String searchQuery = '';
 
-  void _toggleTask(Task task) async {
+  void _toggleTask(Task task) {
     setState(() {
       task.isCompleted = !task.isCompleted;
     });
-
-    await Future.delayed(const Duration(milliseconds: 400));
-    setState(() {});
   }
 
   @override
@@ -60,7 +57,7 @@ class TasksScreenState extends State<TasksScreen> {
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0),
             child: Text(
-              "Let’s get\nthings done 💪",
+              "Let's get\nthings done 💪",
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
@@ -116,10 +113,38 @@ class TasksScreenState extends State<TasksScreen> {
           ),
           const SizedBox(height: 20),
           Expanded(
-            child: AnimatedListWrapper(
-              activeTasks: activeTasks,
-              completedTasks: completedTasks,
-              buildTile: _buildTaskTile,
+            child: ListView(
+              children: [
+                if (activeTasks.isEmpty)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                    child: Center(
+                      child: Text(
+                        "Nothing to do 🏖️\nNice work!",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                    ),
+                  ),
+                ...activeTasks.map((task) => _buildTaskTile(task, false)),
+                if (completedTasks.isNotEmpty) ...[
+                  const Padding(
+                    padding: EdgeInsets.only(top: 24, bottom: 8),
+                    child: Text(
+                      "Completed",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  ...completedTasks.map((task) => _buildTaskTile(task, true)),
+                ],
+              ],
             ),
           ),
         ],
@@ -128,125 +153,63 @@ class TasksScreenState extends State<TasksScreen> {
   }
 
   Widget _buildTaskTile(Task task, bool isCompletedSection) {
-    return AnimatedSwitcher(
-      duration: const Duration(milliseconds: 300),
-      transitionBuilder: (child, animation) {
-        return ScaleTransition(
-          scale: CurvedAnimation(parent: animation, curve: Curves.easeOutBack),
-          child: FadeTransition(opacity: animation, child: child),
-        );
-      },
-      child: Padding(
-        key: ValueKey('${task.title}_${task.isCompleted}'),
-        padding: const EdgeInsets.symmetric(vertical: 6.0),
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.grey[200],
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              color: Colors.grey[400]!,
-              width: 1,
-            ), // Added border
-          ),
-          child: ListTile(
-            leading: GestureDetector(
-              onTap: () {
-                _toggleTask(task);
-              },
-              child: Container(
-                padding: const EdgeInsets.all(6),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xFFC0C0C0), width: 1),
-                  color:
-                      task.isCompleted ? Color(0xFF1F8EBE) : Color(0xFFD9D9D9),
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                child: Icon(
-                  task.isCompleted ? Icons.close : Icons.circle,
-                  color: task.isCompleted ? Colors.black : Colors.transparent,
-                  size: 24,
-                ),
-              ),
-            ),
-            title: Text(
-              task.title,
-              style: TextStyle(
-                fontSize: 16,
-                color: task.isCompleted ? Colors.grey : Colors.black,
-                decoration:
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6.0),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.grey[200],
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Colors.grey[400]!, width: 1),
+        ),
+        child: ListTile(
+          leading: GestureDetector(
+            onTap: () => _toggleTask(task),
+            child: Container(
+              padding: const EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                border: Border.all(color: const Color(0xFFC0C0C0), width: 1),
+                color:
                     task.isCompleted
-                        ? TextDecoration.lineThrough
-                        : TextDecoration.none,
+                        ? const Color(0xFF1F8EBE)
+                        : const Color(0xFFD9D9D9),
+                borderRadius: BorderRadius.circular(6),
+              ),
+              child: Icon(
+                task.isCompleted ? Icons.close : Icons.circle,
+                color: task.isCompleted ? Colors.black : Colors.transparent,
+                size: 24,
               ),
             ),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  task.points.toString(),
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color:
-                        task.isCompleted
-                            ? Colors.grey
-                            : const Color(0xFF1F8EBE),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                const Icon(Icons.more_vert),
-              ],
+          ),
+          title: Text(
+            task.title,
+            style: TextStyle(
+              fontSize: 16,
+              color: task.isCompleted ? Colors.grey : Colors.black,
+              decoration:
+                  task.isCompleted
+                      ? TextDecoration.lineThrough
+                      : TextDecoration.none,
             ),
+          ),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                task.points.toString(),
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color:
+                      task.isCompleted ? Colors.grey : const Color(0xFF1F8EBE),
+                ),
+              ),
+              const SizedBox(width: 12),
+              const Icon(Icons.more_vert),
+            ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class AnimatedListWrapper extends StatelessWidget {
-  final List<Task> activeTasks;
-  final List<Task> completedTasks;
-  final Widget Function(Task, bool) buildTile;
-
-  const AnimatedListWrapper({
-    super.key,
-    required this.activeTasks,
-    required this.completedTasks,
-    required this.buildTile,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        if (activeTasks.isEmpty)
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-            child: Center(
-              child: Text(
-                "Nothing to do 🏖️\nWell done!",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.grey[600],
-                ),
-              ),
-            ),
-          ),
-        ...activeTasks.map((task) => buildTile(task, false)),
-        if (completedTasks.isNotEmpty) ...[
-          const Padding(
-            padding: EdgeInsets.only(top: 24, bottom: 8),
-            child: Text(
-              "Completed",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-          ),
-          ...completedTasks.map((task) => buildTile(task, true)),
-        ],
-      ],
     );
   }
 }
