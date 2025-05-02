@@ -2,120 +2,46 @@ import 'package:flutter/material.dart';
 import 'package:udunnit/themes/colors.dart';
 
 class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                'Hello, João!',
-                style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(width: 20),
-              CircleAvatar(
-                radius: 50,
-                backgroundImage: AssetImage('assets/images/fake_joao_mauricio.png'),
-              )
-            ]
-          ),
-          SizedBox(height: 40),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 34),
-            width: double.infinity,
-            padding: EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Appcolors.Grey,
-              borderRadius: BorderRadius.circular(24),
-              border: Border.all(color: Appcolors.GreyBorder, width: 2),
-            ),
-            child: Column(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        child: Column(
+          children: [
+            const SizedBox(height: 25),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  alignment: Alignment.centerLeft,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Flexible(
-                        child: Text.rich(
-                          TextSpan(
-                            text: 'Your are currently a member of the house "',
-                            style: TextStyle(
-                              fontSize: 26,
-                              fontWeight: FontWeight.bold
-                            ),
-                            children: [
-                              TextSpan(
-                                text: 'Cirb com os bros 🏠',
-                                style: TextStyle(fontWeight: FontWeight.w300),
-                              ),
-                              TextSpan(text: '"'),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                Text(
+                  'Hello, João!',
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
-
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          alignment: Alignment.centerRight,
-                          foregroundColor: Appcolors.Red,
-                        ),
-                        child: Text(
-                          'Quit house',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          elevation: 0.0,
-                          alignment: Alignment.centerRight,
-                          backgroundColor: Appcolors.Blue,
-                          foregroundColor: Appcolors.Black,
-                          side: BorderSide(color: Appcolors.GreyBorder, width: 1),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(14),
-                          ),
-                        ),
-                        child: Text(
-                          'View other members',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
+                SizedBox(width: 20),
+                Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Appcolors.GreyBorder, width: 1),
+                  ),
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage(
+                      'assets/images/fake_joao_mauricio.png',
+                    ),
                   ),
                 ),
               ],
             ),
-          ),
-
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 34),
+            SizedBox(height: 20),
+            Container(
               width: double.infinity,
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Appcolors.Grey,
                 borderRadius: BorderRadius.circular(24),
-                border: Border.all(color: Appcolors.GreyBorder, width: 2),
+                border: Border.all(color: Appcolors.GreyBorder, width: 1),
               ),
               child: Column(
                 children: [
@@ -125,46 +51,63 @@ class ProfileScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Flexible(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "This week, you've completed ",
-                                  style: TextStyle(
-                                    fontSize: 26,
-                                    fontWeight: FontWeight.bold
-                                  ),
+                          child: Text.rich(
+                            TextSpan(
+                              text: 'You are currently a member of the house "',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
                               ),
-                              Text.rich(
+                              children: [
                                 TextSpan(
-                                  text: "9 ",
-                                  style: TextStyle(
-                                    fontSize: 26,
-                                    fontWeight: FontWeight.bold,
-                                    color: Appcolors.Orange,
-                                  ),
-                                  children: [                                
-                                    TextSpan(
-                                      text: ' tasks! 🔥',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 26,
-                                        color: Appcolors.Black,
-
-                                      ),
-                                    ),
-                                  ],
+                                  text: 'Crib com os bros 🏠',
+                                  style: TextStyle(fontWeight: FontWeight.w300),
                                 ),
-                              ),
-                              Text(
-                                "Great work! ",
-                                  style: TextStyle(
-                                    color: Appcolors.Black.withOpacity(0.5),
-                                    fontSize: 26,
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                              ),
-                            ],
+                                TextSpan(text: '"'),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            alignment: Alignment.centerRight,
+                            foregroundColor: Appcolors.Red,
+                          ),
+                          child: Text(
+                            'Quit house',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
+
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0.0,
+                            alignment: Alignment.centerRight,
+                            backgroundColor: Appcolors.Blue,
+                            foregroundColor: Appcolors.Black,
+                            side: BorderSide(
+                              color: Appcolors.GreyBorder,
+                              width: 1,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                          ),
+                          child: Text(
+                            'View members',
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 16, color: Colors.white),
                           ),
                         ),
                       ],
@@ -173,8 +116,78 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-        ],
+
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Appcolors.Grey,
+                  borderRadius: BorderRadius.circular(24),
+                  border: Border.all(color: Appcolors.GreyBorder, width: 1),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Flexible(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text.rich(
+                                  TextSpan(
+                                    text: "This week, you've completed ",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    children: [
+                                      TextSpan(
+                                        text: "9 ",
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          color: Appcolors.Orange,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text: 'tasks! 🔥',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                          color: Appcolors.Black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 10.0),
+                                  child: Text(
+                                    "Great work! ",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w300,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
