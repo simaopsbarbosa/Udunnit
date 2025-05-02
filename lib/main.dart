@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       title: '3 Screen Nav App',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: MainPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
