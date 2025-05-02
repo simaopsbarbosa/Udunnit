@@ -125,7 +125,7 @@ class TasksScreenState extends State<TasksScreen> {
                         setState(() {
                           effortPoints = value;
                         });
-                      }
+                      },
                     ),
                   ],
                 ),
@@ -251,7 +251,7 @@ class TasksScreenState extends State<TasksScreen> {
                   controller: _searchController,
                   onChanged: (value) => setState(() => searchQuery = value),
                   decoration: InputDecoration(
-                    hintText: "Search for any task...",
+                    hintText: "Search or add any task...",
                     prefixIcon: const Icon(Icons.search),
                     filled: true,
                     fillColor: Colors.grey[200],
@@ -279,12 +279,15 @@ class TasksScreenState extends State<TasksScreen> {
               ),
               const SizedBox(width: 10),
               Container(
-                decoration: const BoxDecoration(
-                  color: Color(0xFF1F8EBE),
+                decoration: BoxDecoration(
+                  color:
+                      _searchController.text.isEmpty
+                          ? Colors.grey
+                          : const Color(0xFF1F8EBE),
                   shape: BoxShape.circle,
                 ),
                 child: IconButton(
-                  onPressed: _addTask,
+                  onPressed: _searchController.text.isEmpty ? null : _addTask,
                   icon: const Icon(Icons.add, color: Colors.white),
                 ),
               ),

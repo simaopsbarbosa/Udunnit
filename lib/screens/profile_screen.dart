@@ -60,7 +60,7 @@ class ProfileScreen extends StatelessWidget {
                               ),
                               children: [
                                 TextSpan(
-                                  text: 'Crib com os bros 🏠',
+                                  text: 'Crib with the bros 🏠',
                                   style: TextStyle(fontWeight: FontWeight.w300),
                                 ),
                                 TextSpan(text: '"'),

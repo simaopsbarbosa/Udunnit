@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 30),
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(16),
@@ -29,25 +29,25 @@ class HomeScreen extends StatelessWidget {
                 color: Appcolors.Grey,
                 borderRadius: BorderRadius.circular(24),
                 border: Border.all(color: Appcolors.GreyBorder, width: 1),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.deepOrange.shade200,
+                    spreadRadius: 0.001,
+                    blurRadius: 8,
+                    offset: Offset(0, 0),
+                  ),
+                ],
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Flexible(
-                          child: Text(
-                            "This week's most determined worker 🫡",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                  Text(
+                    "Week's over! 🎉",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "This week's most determined worker 🫡",
+                    style: TextStyle(fontSize: 16),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 14.0),
@@ -64,6 +64,78 @@ class HomeScreen extends StatelessWidget {
                         Text(
                           'João Maurício 👑',
                           style: TextStyle(fontSize: 18),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20.0),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Appcolors.Grey,
+                borderRadius: BorderRadius.circular(24),
+                border: Border.all(color: Appcolors.GreyBorder, width: 1),
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Flexible(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "This week's leaderboard",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Column(
+                                children: [
+                                  const SizedBox(height: 10.0),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        CustomLeaderboardRow(
+                                          index: '1',
+                                          personImage: AssetImage(
+                                            'assets/images/fake_joao_mauricio.png',
+                                          ),
+                                          name: 'João Maurício',
+                                          points: '3',
+                                        ),
+                                        CustomLeaderboardRow(
+                                          index: '2',
+                                          personImage: AssetImage(
+                                            'assets/images/fake_joana_simoes.png',
+                                          ),
+                                          name: 'Joana Simões',
+                                          points: '2',
+                                        ),
+                                        CustomLeaderboardRow(
+                                          index: '3',
+                                          personImage: AssetImage(
+                                            'assets/images/fake_paulo_marques.png',
+                                          ),
+                                          name: 'Paulo Marques',
+                                          points: '1',
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -111,7 +183,7 @@ class HomeScreen extends StatelessWidget {
                                             'assets/images/fake_joao_mauricio.png',
                                           ),
                                           name: 'João Maurício',
-                                          points: '14',
+                                          points: '10',
                                         ),
                                         CustomLeaderboardRow(
                                           index: '2',
@@ -119,7 +191,7 @@ class HomeScreen extends StatelessWidget {
                                             'assets/images/fake_paulo_marques.png',
                                           ),
                                           name: 'Paulo Marques',
-                                          points: '9',
+                                          points: '7',
                                         ),
                                         CustomLeaderboardRow(
                                           index: '3',
@@ -127,7 +199,7 @@ class HomeScreen extends StatelessWidget {
                                             'assets/images/fake_joana_simoes.png',
                                           ),
                                           name: 'Joana Simões',
-                                          points: '6',
+                                          points: '3',
                                         ),
                                       ],
                                     ),
@@ -179,78 +251,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 10.0),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Appcolors.Grey,
-                borderRadius: BorderRadius.circular(24),
-                border: Border.all(color: Appcolors.GreyBorder, width: 1),
-              ),
-              child: Column(
-                children: [
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Flexible(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "This week's leaderboard",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Column(
-                                children: [
-                                  const SizedBox(height: 10.0),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      children: [
-                                        CustomLeaderboardRow(
-                                          index: '1',
-                                          personImage: AssetImage(
-                                            'assets/images/fake_joao_mauricio.png',
-                                          ),
-                                          name: 'João Maurício',
-                                          points: '9',
-                                        ),
-                                        CustomLeaderboardRow(
-                                          index: '2',
-                                          personImage: AssetImage(
-                                            'assets/images/fake_joana_simoes.png',
-                                          ),
-                                          name: 'Joana Simões',
-                                          points: '4',
-                                        ),
-                                        CustomLeaderboardRow(
-                                          index: '3',
-                                          personImage: AssetImage(
-                                            'assets/images/fake_paulo_marques.png',
-                                          ),
-                                          name: 'Paulo Marques',
-                                          points: '2',
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+
             const SizedBox(height: 10.0),
             Container(
               width: double.infinity,

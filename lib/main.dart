@@ -18,9 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Udunnit',
-
       theme: ThemeData(primarySwatch: Colors.blue),
-
       home: MainPage(),
       debugShowCheckedModeBanner: false,
     );
@@ -72,35 +70,23 @@ class _MainPageState extends State<MainPage> {
 
         child: BottomNavigationBar(
           iconSize: 32,
-
           type: BottomNavigationBarType.fixed,
-
           unselectedItemColor: Colors.black,
-
           selectedItemColor: Colors.deepOrange,
-
           backgroundColor: const Color(0xFFECECEC),
-
           currentIndex: _currentIndex,
-
           onTap: (index) => setState(() => _currentIndex = index),
-
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.check_circle_outline),
-
               label: 'Tasks',
             ),
-
             BottomNavigationBarItem(
               icon: Icon(Icons.home_outlined),
-
               label: 'Home',
             ),
-
             BottomNavigationBarItem(
               icon: Icon(Icons.person_outline),
-
               label: 'Profile',
             ),
           ],
