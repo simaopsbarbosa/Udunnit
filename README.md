@@ -1,17 +1,7 @@
 # Udunnit
-# udunit
 
-A new Flutter project.
+Udunnit é uma app que ajuda a distribuir tarefas domésticas entre colegas de casa.
 
-## Getting Started
+Todos os utilizadores pertencem à mesma casa e só podem estar numa de cada vez. Durante a semana, qualquer pessoa pode adicionar tarefas com uma pontuação de 1 a 5, consoante o esforço necessário. Quem completar uma tarefa ganha os pontos atribuídos.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+No final da semana, é enviado um relatório com o melhor contribuidor, e no fim do mês, é anunciado o vencedor. A casa pode definir prémios ou castigos mensais, como não arrumar a cozinha ou pagar um jantar. Este sistema gamifica as tarefas domésticas e promove uma partilha mais justa do trabalho.
