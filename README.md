@@ -1,5 +1,8 @@
 # Udunnit
 
+![logo square with name (4)](https://github.com/user-attachments/assets/d46085b5-f236-43da-98f1-73337ff891dc)
+
+
 ## Problema
 Nas casas partilhadas, a divisão das tarefas é frequentemente desorganizada e injusta, gerando conflitos entre colegas.
 
