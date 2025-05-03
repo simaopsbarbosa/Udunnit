@@ -1,7 +1,22 @@
 # Udunnit
 
-Udunnit é uma app que ajuda a distribuir tarefas domésticas entre colegas de casa.
+## Problema
+Nas casas partilhadas, a divisão das tarefas é frequentemente desorganizada e injusta, gerando conflitos entre colegas.
 
-Todos os utilizadores pertencem à mesma casa e só podem estar numa de cada vez. Durante a semana, qualquer pessoa pode adicionar tarefas com uma pontuação de 1 a 5, consoante o esforço necessário. Quem completar uma tarefa ganha os pontos atribuídos.
+## Solução
+Udunnit gamifica as tarefas domésticas: os utilizadores ganham pontos por cada tarefa concluída, e no final do mês é anunciado o vencedor. A casa pode definir um prémio ou castigo mensal, incentivando todos a colaborar de forma equilibrada e divertida.
 
-No final da semana, é enviado um relatório com o melhor contribuidor, e no fim do mês, é anunciado o vencedor. A casa pode definir prémios ou castigos mensais, como não arrumar a cozinha ou pagar um jantar. Este sistema gamifica as tarefas domésticas e promove uma partilha mais justa do trabalho.
+## Tecnologias Utilizadas
+Flutter, Firebase Realtime Database
+
+## Plataformas
+Link para o Github: https://github.com/up202305719/Udunnit
+
+Link para os mockups no Figma: https://www.figma.com/design/HpG6fhha4c1ufTWPb73xAF/Untitled?node-id=0-1&t=XnwFIRCsxu6bDQdI-1
+
+## Equipa - NoShift Sherlock
+
+Simão Barbosa
+Lucas Oliveira
+Filipe Solha
+Pedro Araujo
