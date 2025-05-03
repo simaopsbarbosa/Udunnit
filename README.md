@@ -1,6 +1,7 @@
 # Udunnit
 
 ![logo square with name (4)](https://github.com/user-attachments/assets/d46085b5-f236-43da-98f1-73337ff891dc)
+![Group 2](https://github.com/user-attachments/assets/b5786c5f-f790-43a3-bf7d-ddd5cbc23258)
 
 
 ## Problema
