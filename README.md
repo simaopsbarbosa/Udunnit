@@ -10,13 +10,12 @@ Udunnit gamifica as tarefas domésticas: os utilizadores ganham pontos por cada 
 Flutter, Firebase Realtime Database
 
 ## Plataformas
-Link para o Github: https://github.com/up202305719/Udunnit
-
-Link para os mockups no Figma: https://www.figma.com/design/HpG6fhha4c1ufTWPb73xAF/Untitled?node-id=0-1&t=XnwFIRCsxu6bDQdI-1
+- Link para o Github: https://github.com/up202305719/Udunnit
+- Link para os mockups no Figma: https://www.figma.com/design/HpG6fhha4c1ufTWPb73xAF/Untitled?node-id=0-1&t=XnwFIRCsxu6bDQdI-1
 
 ## Equipa - NoShift Sherlock
 
-Simão Barbosa
-Lucas Oliveira
-Filipe Solha
-Pedro Araujo
+- Simão Barbosa
+- Lucas Oliveira
+- Filipe Solha
+- Pedro Araujo
