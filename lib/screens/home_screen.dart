@@ -342,7 +342,7 @@ class HomeScreen extends StatelessWidget {
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                               ),
-                                              TextSpan(text: " 5 tasks left"),
+                                              TextSpan(text: " 3 tasks left"),
                                             ],
                                           ),
                                         ),

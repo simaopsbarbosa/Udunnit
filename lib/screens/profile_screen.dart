@@ -147,7 +147,7 @@ class ProfileScreen extends StatelessWidget {
                                     ),
                                     children: [
                                       TextSpan(
-                                        text: "9 ",
+                                        text: "3 ",
                                         style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
