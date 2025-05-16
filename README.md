@@ -1,7 +1,6 @@
 # Udunnit
 
-> Este projeto foi desenvolvido em menos de 48 horas no âmbito da participação no [ShiftAppens 2025](https://shiftappens.com/), um Hackathon de programação e de empreendedorismo em Portugal.
-
+> Este projeto foi desenvolvido no âmbito da participação no [ShiftAppens 2025](https://shiftappens.com/), um hackathon de programação e empreendedorismo em Portugal, em menos de 48 horas.
 
 ![logo square with name (4)](https://github.com/user-attachments/assets/d46085b5-f236-43da-98f1-73337ff891dc)
 ![Group 2](https://github.com/user-attachments/assets/b5786c5f-f790-43a3-bf7d-ddd5cbc23258)
